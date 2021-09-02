@@ -1,5 +1,9 @@
 import React from "react"
 import ReactDOM from "react-dom"
+import './main.css'
+import './annoucement.js'
+import AnnoucementItem from './AnnoucementItem'
+
 
 
 class Task extends React.Component {
@@ -43,6 +47,7 @@ class Task extends React.Component {
 	};
 	
 	render() {
+		
 		if (this.state.edit) {
 			return this.rendEdit ();
 		} else {
@@ -56,6 +61,7 @@ class Field extends React.Component {
 		super(props);
 		this.state = {
 			tasks: [
+			
 				'1 announcement ',
 				'2 announcement',
 				'3 announcement'
@@ -88,8 +94,10 @@ class Field extends React.Component {
 	};
 	
 	render() {
+		
 		return (
 			<div className="field">
+				<AnnoucementItem/>
 				<button onClick={this.add.bind (null,"new announcement")} className="btn new">Add new</button>
 				{this.state.tasks.map (this.eachTask)}
 			</div>
