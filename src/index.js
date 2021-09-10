@@ -1,9 +1,9 @@
 import React from "react"
 import ReactDOM from "react-dom"
 import './main.css'
-import './annoucement.js'
-import AnnoucementItem from './AnnoucementItem'
-
+import './annoucement'
+import AnnoucementItem from "./AnnoucementItem"
+import AnnoucementList from "./AnnoucementList"
 
 
 class Task extends React.Component {
@@ -31,8 +31,8 @@ class Task extends React.Component {
 		return (
 			<div className="box">
 				<div className="text">{this.props.children}</div>
-				<button onClick={this.edit} className="btn light">Редактировать</button>
-				<button onClick={this.remove} className="btn red">Удалить</button>
+				<button onClick={this.edit} className="btn_light">Редактировать</button>
+				<button onClick={this.remove} className="btn_red">Удалить</button>
 			</div>
 		);
 	};
@@ -41,7 +41,7 @@ class Task extends React.Component {
 		return (
 			<div className="box">
 				<textarea ref="newTxt" defaultValue={this.props.children}></textarea>
-				<button onClick={this.save} className="btn success">Сохранить</button>
+				<button onClick={this.save} className="btn_success">Сохранить</button>
 			</div>
 		);
 	};
@@ -61,11 +61,9 @@ class Field extends React.Component {
 		super(props);
 		this.state = {
 			tasks: [
-			
-				'1 announcement ',
-				'2 announcement',
-				'3 announcement'
-			]
+			<AnnoucementList/>,
+			"annoucement"
+			]	
 		};
 	};
 	add = (text) => {
@@ -96,9 +94,8 @@ class Field extends React.Component {
 	render() {
 		
 		return (
-			<div className="field">
-				<AnnoucementItem/>
-				<button onClick={this.add.bind (null,"new announcement")} className="btn new">Add new</button>
+			<div className="field">	
+				<button onClick={this.add.bind (null,"new announcement")} className="btn_new">Add new</button>
 				{this.state.tasks.map (this.eachTask)}
 			</div>
 		);

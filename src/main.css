@@ -1,3 +1,39 @@
 body {
-    background-color:burlywood;
+    background-color:rgb(94, 88, 82);
+    color: white;
+    font-size: 16px;
+}
+.list-item {
+    width: 50%;
+    background-color: blueviolet;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 1px;
+  
+}
+.title {
+    font-size: 26px;
+    font-weight: 700;
+    text-align: center;
+
+}
+.description {
+    font-size: 18px;
+    line-height: 1.5;
+}
+.date {
+    padding-top: 10px;
+}
+.btn_new{
+    width: 100px;
+    background-color: blueviolet;
+    padding:5px;
+    margin:20px 15px;
+}
+.btn_light, .btn_red,.btn_success{
+    width: 150px;
+    background-color: blueviolet;
+    padding:5px;
+    margin:20px 15px;
+
 }
